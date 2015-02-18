@@ -8,6 +8,7 @@ app.service('mainService', function($http, $q) {
         method: 'GET',
         url: 'http://reqr.es/api/users?page=1'
     }).then(function(response) {
+      response = response.data.data
       deffered.resolve(response)
     })
     return deffered.promise;
